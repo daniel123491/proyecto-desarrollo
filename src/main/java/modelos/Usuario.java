@@ -11,6 +11,9 @@ public class Usuario {  // <-- Debe ser pública
         return correo;
     }
 
+    
+    
+    
     public void setCorreo(String correo) {
         this.correo = correo;
     }

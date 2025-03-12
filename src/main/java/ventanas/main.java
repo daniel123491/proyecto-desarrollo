@@ -4,62 +4,28 @@
  */
 package ventanas;
 
-import javax.swing.SwingUtilities;
+import javax.swing.*;
 
 public class main {
     public static void main(String[] args) {
-        SwingUtilities.invokeLater(() -> {
-            abrirVentana1();
-        });
+        SwingUtilities.invokeLater(() -> abrirVentana(new ventana1()));
     }
 
-    private static void abrirVentana1() {
-        ventana1 ventana1 = new ventana1();
-        ventana1.setVisible(true);
-        ventana1.addWindowListener(new java.awt.event.WindowAdapter() {
+    private static void abrirVentana(JFrame ventana) {
+        ventana.setVisible(true);
+        ventana.addWindowListener(new java.awt.event.WindowAdapter() {
             @Override
             public void windowClosed(java.awt.event.WindowEvent e) {
-                abrirVentana2();
+                if (ventana instanceof ventana1) abrirVentana(new ventana2());
+                else if (ventana instanceof ventana2) abrirVentana(new ventana3());
+                else if (ventana instanceof ventana3) abrirVentana(new ventana4());
+                else if (ventana instanceof ventana4) abrirVentana(new ventana5());
+                else if (ventana instanceof ventana5) abrirVentana(new ventana6());
+                else if (ventana instanceof ventana6) abrirVentana(new ventana7());
+                else if (ventana instanceof ventana7) abrirVentana(new ventana8());
+                else if (ventana instanceof ventana8) abrirVentana(new ventana9());
+                else if (ventana instanceof ventana9) abrirVentana(new ventana10());
             }
         });
-    }
-
-    private static void abrirVentana2() {
-        ventana2 ventana2 = new ventana2();
-        ventana2.setVisible(true);
-        ventana2.addWindowListener(new java.awt.event.WindowAdapter() {
-            @Override
-            public void windowClosed(java.awt.event.WindowEvent e) {
-                abrirVentana3();
-            }
-        });
-    }
-
-    private static void abrirVentana3() {
-        ventana3 ventana3 = new ventana3();
-        ventana3.setVisible(true);
-        ventana3.addWindowListener(new java.awt.event.WindowAdapter() {
-            @Override
-            public void windowClosed(java.awt.event.WindowEvent e) {
-                abrirVentana4();
-            }
-        });
-    }
-
-    private static void abrirVentana4() {
-        ventana4 ventana4 = new ventana4();
-        ventana4.setVisible(true);
-        ventana4.addWindowListener(new java.awt.event.WindowAdapter() {
-            @Override
-            public void windowClosed(java.awt.event.WindowEvent e) {
-                abrirVentana5();
-            }
-        });
-    }
-
-    private static void abrirVentana5() {
-        ventana5 ventana5 = new ventana5();
-        ventana5.setVisible(true);
     }
 }
-
